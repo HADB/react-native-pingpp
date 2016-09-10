@@ -78,7 +78,7 @@
 		91798CFE1BCD16A10012AFD1 = {
 			isa = PBXGroup;
 			children = (
-				9F4BB0331CACE2F900385E53 /* PingPaySDK */,
+				9F4BB0331CACE2F900385E53 /* lib */,
 				91798D091BCD16A10012AFD1 /* RCTPingpp */,
 				91798D081BCD16A10012AFD1 /* Products */,
 			);
@@ -101,7 +101,7 @@
 			path = RCTPingpp;
 			sourceTree = "<group>";
 		};
-		9F4BB0331CACE2F900385E53 /* PingPaySDK */ = {
+		9F4BB0331CACE2F900385E53 /* lib */ = {
 			isa = PBXGroup;
 			children = (
 				9F4BB0341CACE2F900385E53 /* Channels */,
@@ -110,7 +110,7 @@
 				9F4BB0491CACE2F900385E53 /* Pingpp.bundle */,
 				9F4BB04A1CACE2F900385E53 /* Pingpp.h */,
 			);
-			path = PingPaySDK;
+			path = lib;
 			sourceTree = "<group>";
 		};
 		9F4BB0341CACE2F900385E53 /* Channels */ = {
@@ -327,22 +327,22 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/Alipay",
+					"$(PROJECT_DIR)/lib/Channels/Alipay",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../node_modules/react-native/React/**",
-					"$(SRCROOT)/PingPaySDK/**",
+					"$(SRCROOT)/lib/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/PingPaySDK/**",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/Alipay",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/ApplePay",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/UnionPay",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/Wx",
-					"$(PROJECT_DIR)/PingPaySDK",
-					"$(PROJECT_DIR)/PingPaySDK/Dependencies/Network",
+					"$(SRCROOT)/lib/**",
+					"$(PROJECT_DIR)/lib/Channels/Alipay",
+					"$(PROJECT_DIR)/lib/Channels/ApplePay",
+					"$(PROJECT_DIR)/lib/Channels/UnionPay",
+					"$(PROJECT_DIR)/lib/Channels/Wx",
+					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/Dependencies/Network",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RCTPingpp;
@@ -356,22 +356,22 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/Alipay",
+					"$(PROJECT_DIR)/lib/Channels/Alipay",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../node_modules/react-native/React/**",
-					"$(SRCROOT)/PingPaySDK/**",
+					"$(SRCROOT)/lib/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/PingPaySDK/**",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/Alipay",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/ApplePay",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/UnionPay",
-					"$(PROJECT_DIR)/PingPaySDK/Channels/Wx",
-					"$(PROJECT_DIR)/PingPaySDK",
-					"$(PROJECT_DIR)/PingPaySDK/Dependencies/Network",
+					"$(SRCROOT)/lib/**",
+					"$(PROJECT_DIR)/lib/Channels/Alipay",
+					"$(PROJECT_DIR)/lib/Channels/ApplePay",
+					"$(PROJECT_DIR)/lib/Channels/UnionPay",
+					"$(PROJECT_DIR)/lib/Channels/Wx",
+					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/Dependencies/Network",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RCTPingpp;

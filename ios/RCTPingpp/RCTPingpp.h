@@ -1,5 +1,5 @@
 #import "RCTBridgeModule.h"
 
-@interface RCTPingxx : NSObject<RCTBridgeModule>
+@interface RCTPingpp : NSObject<RCTBridgeModule>
 
 @end

@@ -1,15 +1,15 @@
-#import "RCTPingxx.h"
+#import "RCTPingpp.h"
 #import "Pingpp.h"
 #import "RCTEventDispatcher.h"
 #import "RCTBridge.h"
 
 static NSString *gScheme = @"";
 
-@interface RCTPingxx()
+@interface RCTPingpp()
 
 @end
 
-@implementation RCTPingxx
+@implementation RCTPingpp
 
 @synthesize bridge = _bridge;
 
@@ -25,7 +25,7 @@ RCT_EXPORT_MODULE();
     self = [super init];
     if (self) {
         [self _autoGetScheme];
-        
+
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleOpenURL:) name:@"RCTOpenURLNotification" object:nil];
     }
     return self;
@@ -40,7 +40,7 @@ RCT_EXPORT_MODULE();
 {
     NSDictionary *userInfo = note.userInfo;
     NSString *url = userInfo[@"url"];
-    
+
     [Pingpp handleOpenURL:[NSURL URLWithString:url] withCompletion:^(NSString *result, PingppError *error) {
         [self onResult:result erorr:error];
     }];
@@ -52,7 +52,7 @@ RCT_EXPORT_METHOD(pay:(NSString *)charge)
     [Pingpp setDebugMode:YES];
 #endif
     UIViewController *controller = [[UIApplication sharedApplication].delegate window].rootViewController;
-    
+
     [Pingpp createPayment:charge
            viewController:controller
              appURLScheme:gScheme
@@ -69,7 +69,7 @@ RCT_EXPORT_METHOD(pay:(NSString *)charge)
         body[@"errCode"] = @(error.code);
         body[@"errMsg"] = [error getMsg];
     }
-    [self.bridge.eventDispatcher sendAppEventWithName:@"Pingxx_Resp" body:body];
+    [self.bridge.eventDispatcher sendAppEventWithName:@"pingppPayResult" body:body];
 }
 
 - (void)_autoGetScheme
@@ -77,7 +77,7 @@ RCT_EXPORT_METHOD(pay:(NSString *)charge)
     if (gScheme.length > 0) {
         return;
     }
-    
+
     NSArray *list = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleURLTypes"];
     for (NSDictionary *item in list) {
         NSString *name = item[@"CFBundleURLName"];

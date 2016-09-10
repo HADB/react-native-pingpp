@@ -1,0 +1,24 @@
+{
+  "name": "react-native-pingpp",
+  "version": "1.0.0",
+  "description": "Ping++ Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadb/react-native-pingpp.git"
+  },
+  "keywords": [
+    "react-native",
+    "pingpp",
+    "ping++"
+  ],
+  "author": "HADB",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hadb/react-native-pingpp/issues"
+  },
+  "homepage": "https://github.com/hadb/react-native-pingpp#readme"
+}

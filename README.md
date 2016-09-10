@@ -37,7 +37,8 @@
        <string>mqq</string>
    </array>
 ```
-9. 其他未尽事宜，可参考：[https://github.com/PingPlusPlus/pingpp-ios](https://github.com/PingPlusPlus/pingpp-ios)
+9. 支付宝最新包可前往[https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.VRzxf4&treeId=193&articleId=104509&docType=1](https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.VRzxf4&treeId=193&articleId=104509&docType=1)下载，注意只能下载`SDK&DEMO`中的，`SDK`中的包有问题。
+10. 其他未尽事宜，可参考：[https://github.com/PingPlusPlus/pingpp-ios](https://github.com/PingPlusPlus/pingpp-ios)
 
 ## 安装(Android)
 

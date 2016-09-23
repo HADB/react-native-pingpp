@@ -81,7 +81,7 @@ RCT_EXPORT_METHOD(pay:(NSString *)charge)
     NSArray *list = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleURLTypes"];
     for (NSDictionary *item in list) {
         NSString *name = item[@"CFBundleURLName"];
-        if ([name isEqualToString:@"alipay"]) {
+        if ([name isEqualToString:@"weixin"]) {
             NSArray *schemes = item[@"CFBundleURLSchemes"];
             if (schemes.count > 0)
             {

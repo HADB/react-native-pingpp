@@ -21,8 +21,7 @@ function waitForResponse() {
 
             if (result && result === 'success') {
                 resolve(result);
-            }
-            else {
+            } else {
                 const err = new Error(errMsg);
                 err.errCode = errCode;
                 reject(err);
@@ -31,13 +30,15 @@ function waitForResponse() {
     });
 }
 
+var Pingpp = {
+    pay: async function(charge) {
+        if (typeof charge === 'string') {
+            nativeAPI.pay(charge);
+        } else {
+            nativeAPI.pay(JSON.stringify(charge));
+        }
+        return await waitForResponse();
+    }
+};
 
-export async function pay(charge){
-    if(typeof charge === 'string') {
-        nativeAPI.pay(charge);
-    }
-    else {
-        nativeAPI.pay(JSON.stringify(charge));
-    }
-    return await waitForResponse();
-}
+export default Pingpp;

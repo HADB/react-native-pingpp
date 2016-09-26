@@ -66,8 +66,8 @@ RCT_EXPORT_METHOD(pay:(NSString *)charge)
     NSMutableDictionary *body = @{}.mutableCopy;
     body[@"result"] = result;
     if (![result isEqualToString:@"success"]) {
-        body[@"errCode"] = @(error.code);
-        body[@"errMsg"] = [error getMsg];
+        body[@"errorCode"] = @(error.code);
+        body[@"errorMessage"] = [error getMsg];
     }
     [self.bridge.eventDispatcher sendAppEventWithName:@"pingppPayResult" body:body];
 }

@@ -1,44 +1,36 @@
 import {NativeModules, NativeAppEventEmitter} from 'react-native';
 
-let nativeAPI = NativeModules.Pingpp;
-
 let savedCallback = undefined;
 
-NativeAppEventEmitter.addListener('pingppPayResult', resp => {
+NativeAppEventEmitter.addListener('pingppPayResult', response => {
     const callback = savedCallback;
     savedCallback = undefined;
-    callback && callback(resp);
+    callback && callback(response);
 });
 
 function waitForResponse() {
     return new Promise((resolve, reject) => {
-        if (savedCallback) {
-            savedCallback('User canceled.');
-        }
-        savedCallback = r => {
+        savedCallback = response => {
             savedCallback = undefined;
-            const {result, errCode, errMsg} = r;
+            const {result, errorCode, errorMessage} = response;
 
             if (result && result === 'success') {
                 resolve(result);
             } else {
-                const err = new Error(errMsg);
-                err.errCode = errCode;
-                reject(err);
+                const error = new Error(errorMessage);
+                error.errorCode = errorCode;
+                reject(error);
             }
         };
     });
 }
 
-var Pingpp = {
-    pay: async function(charge) {
-        if (typeof charge === 'string') {
-            nativeAPI.pay(charge);
-        } else {
-            nativeAPI.pay(JSON.stringify(charge));
+export default {
+    pay : async function(charge) {
+        if (typeof charge !== 'string') {
+            charge = JSON.stringify(charge);
         }
+        NativeModules.Pingpp.pay(charge);
         return await waitForResponse();
     }
 };
-
-export default Pingpp;

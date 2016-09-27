@@ -40,7 +40,7 @@ public class PingppModule extends ReactContextBaseJavaModule implements Activity
     }
 
     @ReactMethod
-    public void pay(String charge){
+    public void pay(String charge) {
         Intent intent = new Intent(getCurrentActivity(), PaymentActivity.class);
         intent.putExtra(PaymentActivity.EXTRA_CHARGE, charge);
         getCurrentActivity().startActivityForResult(intent, REQUEST_CODE_PAYMENT);
@@ -53,9 +53,9 @@ public class PingppModule extends ReactContextBaseJavaModule implements Activity
             WritableMap map = Arguments.createMap();
             map.putString("result", result);
             if (!result.equals("success")) {
-                map.putInt("errCode", data.getExtras().getInt("code"));
-                map.putString("errMsg", data.getExtras().getString("error_msg"));
-                map.putString("extraMsg", data.getExtras().getString("extra_msg"));
+                map.putInt("errorCode", data.getExtras().getInt("code"));
+                map.putString("errorMessage", data.getExtras().getString("error_msg"));
+                map.putString("extraMessage", data.getExtras().getString("extra_msg"));
             }
             emitter.emit("pingppPayResult", map);
         }

@@ -36,9 +36,5 @@
             android:exported="false"
             android:screenOrientation="behind" />
 
-        <!-- 银联支付 -->
-        <activity android:name="com.unionpay.uppay.PayActivity" />
-
-
     </application>
 </manifest>

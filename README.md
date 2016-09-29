@@ -29,7 +29,7 @@
 7. 在`TARGETS -> Build Settings -> Other Linker Flags`中添加`-ObjC`
 
 8. iOS 9及以上版本如需使用支付宝和微信，许在Info.plist中添加以下代码：
-```xml
+  ```xml
    <key>LSApplicationQueriesSchemes</key>
    <array>
        <string>weixin</string>
@@ -37,17 +37,17 @@
        <string>alipay</string>
        <string>mqq</string>
    </array>
-```
+  ```
 
 9. iOS 9及以上版本需在AppDelegate.m中添加以下代码：
-```objective-c
+  ```objective-c
    - (BOOL)application:(UIApplication *)app
                openURL:(NSURL *)url
                options:(NSDictionary *)options {
        BOOL canHandleURL = [Pingpp handleOpenURL:url withCompletion:nil];
        return canHandleURL;
    }
-```
+  ```
 
 10. 支付宝最新包可前往[https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.VRzxf4&treeId=193&articleId=104509&docType=1](https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.VRzxf4&treeId=193&articleId=104509&docType=1)下载，注意只能下载`SDK&DEMO`中的，`SDK`中的包有问题。
 

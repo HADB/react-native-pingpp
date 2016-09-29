@@ -57,3 +57,6 @@
 ## 安装(Android)
 
 1. TODO
+
+## 感谢
+[https://github.com/lvbingru/react-native-pingxx](https://github.com/lvbingru/react-native-pingxx)

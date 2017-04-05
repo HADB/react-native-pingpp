@@ -1,5 +1,7 @@
 # react-native-pingpp
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/HADB/react-native-pingpp.svg)](https://greenkeeper.io/)
+
 ## 安装(iOS)
 
 1. `npm install react-native-pingpp@https://github.com/HADB/react-native-pingpp.git --save`
